@@ -28,7 +28,7 @@ module AwesomeAb
 
     def initialize(session_id)
       @session_id = session_id
-      @redis_key = "experiments:#{self.class.experiment_name}:#{session_id}"
+      @redis_key = "experiments:#{self.class.experiment_name}:#{Time.now.strftime('%Y%m%d')}:#{session_id}"
     end
 
     def ab_test(args = {})
