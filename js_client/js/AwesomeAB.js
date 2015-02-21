@@ -30,6 +30,24 @@ function AwesomeAB(namespace, container, period) {
     };
 
     var loadExperiment = function (namespace, container, variant) {
+        var app = new App();
+        var date = new Date();
+        var md5 = $.md5(date.toUTCString());
+        debugger;
+        $.ajax({
+            type: "POST",
+            url: "http://" + app.SERVER_HOSTNAME + ":" + app.SERVER_PORT + "/experiment?session_id=" + md5 + "&name=" + namespace + "&variant=" + variant,
+            //url: "http://192.168.100.84:9292/experiment?session_id=" + md5 + "&name=" + namespace + "&variant=" + variant,
+            data: {session_id: md5, name: namespace, variant: variant},
+            success: function (data) {
+                var status = JSON.parse(data);
+                console.log('Status:' + status.status);
+            },
+            error: function (data) {
+                var status = JSON.parse(data);
+                console.log('Status:' + status.status);
+            }
+        });
         $(container).load('templates/' + namespace + '/experiment' + variant + '.html');
     };
 
