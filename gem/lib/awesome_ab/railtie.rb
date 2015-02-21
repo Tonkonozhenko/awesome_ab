@@ -1,4 +1,4 @@
-require_relative 'view_helpers'
+require_relative 'helpers'
 
 module AwesomeAb
   class Railtie < Rails::Railtie
@@ -7,7 +7,8 @@ module AwesomeAb
     end
 
     initializer 'awesome_ab.view_helpers' do
-      ActionView::Base.send :include, AwesomeAb::ViewHelpers
+      ActionView::Base.send :include, AwesomeAb::Helpers
+      ActionController::Base.send :include, AwesomeAb::Helpers
     end
   end
 end

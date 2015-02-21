@@ -6,4 +6,9 @@ class ApplicationController < ActionController::Base
   def index
 
   end
+
+  def finish
+    ab_finish('some')
+    redirect_to root_path
+  end
 end
