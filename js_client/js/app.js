@@ -1,9 +1,4 @@
 $(document).ready(function () {
-    var abTest = new abTesting(50);
-    abTest.start();
-
-    var awesome_ab = new AwesomeAB('name', '#container', [
-        {weight: 10},
-        {weight: 5}
-    ])
+    var awesome_ab = new AwesomeAB('name', '.testing-content', [1,3]);
+    awesome_ab.start();
 });
