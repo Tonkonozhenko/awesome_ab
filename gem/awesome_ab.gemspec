@@ -5,7 +5,7 @@ require 'awesome_ab/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "awesome_ab"
-  spec.version       = AwesomeAB::VERSION
+  spec.version       = AwesomeAb::VERSION
   spec.authors       = ["Alex Tonkonozhenko"]
   spec.email         = ["tonkonozhenko@gmail.com"]
 

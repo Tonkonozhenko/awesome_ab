@@ -27,6 +27,8 @@ gem 'simple_form', github: 'plataformatec/simple_form'
 gem 'rails-i18n'
 gem 'russian'
 
+gem 'awesome_ab', path: '../gem'
+
 # gem 'sidekiq'
 # gem 'sinatra', require: nil
 
@@ -48,6 +50,9 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rvm'
   # gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
+
+  gem 'web-console'
+  gem 'require_reloader'
 end
 
 group :doc do
