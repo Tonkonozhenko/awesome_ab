@@ -1,1 +1,20 @@
-<%= ab_test 'some' %>
+<div class="container">
+  <div class="header">
+    <h3 class="text-muted">AwesomeAB</h3>
+  </div>
+
+  <div class="jumbotron">
+    <h1>Нажми кнопку</h1>
+
+    <p class="lead">Так мы тестируем конверсию пользователей, которые зашли на страницу и увидели данную кнопку</p>
+
+    <p>
+      <%= ab_test 'button' %>
+    </p>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; AwesomeAB 2015</p>
+  </footer>
+
+</div> <!-- /container -->

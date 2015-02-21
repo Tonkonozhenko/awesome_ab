@@ -1,1 +1,1 @@
-require_relative 'exceptions/test_missing'
+require_relative 'exceptions/experiment_missing'

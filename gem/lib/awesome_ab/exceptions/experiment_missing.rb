@@ -1,6 +1,6 @@
 module AwesomeAb
   module Exceptions
-    class TestMissing < StandardError
+    class ExperimentMissing < StandardError
     end
   end
 end

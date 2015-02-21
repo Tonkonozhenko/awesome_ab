@@ -41,5 +41,5 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  RequireReloader.watch_local_gems!
+  # RequireReloader.watch_local_gems!
 end
