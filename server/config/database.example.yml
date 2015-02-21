@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  host: localhost
+  username: postgres
+  password: postgres
+
+development:
+  <<: *default
+  database: gifter_development
+
+test:
+  <<: *default
+  database: gifter_test
+
+production:
+  <<: *default
+  database: gifter_development

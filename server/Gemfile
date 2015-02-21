@@ -1,0 +1,55 @@
+source 'https://rubygems.org'
+
+# Front-end
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
+gem 'jquery-rails'
+gem 'bootstrap-sass'
+gem 'bootswatch-rails', github: 'maxim/bootswatch-rails'
+gem 'slim-rails'
+gem 'font-awesome-rails'
+gem 'active_model_serializers'
+gem 'autoprefixer-rails'
+
+# Back-end
+gem 'rails', '4.2.1.rc1'
+gem 'pg'
+gem 'dotenv-rails'
+gem 'exception_handler', github: 'Tonkonozhenko/exception_handler'
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
+gem 'devise-async'
+gem 'kaminari'
+gem 'kaminari-bootstrap'
+gem 'cancancan'
+gem 'simple_form', github: 'plataformatec/simple_form'
+gem 'rails-i18n'
+gem 'russian'
+
+# gem 'sidekiq'
+# gem 'sinatra', require: nil
+
+group :production do
+  gem 'newrelic_rpm'
+end
+
+group :development do
+  gem 'letter_opener'
+  gem 'quiet_assets'
+  gem 'annotate'
+  gem 'thin'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'spring'
+
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+  # gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
+end
+
+group :doc do
+  gem 'sdoc', '~> 0.4.0'
+end
