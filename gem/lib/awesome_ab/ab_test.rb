@@ -25,7 +25,7 @@ module AwesomeAb
       end
       index = ranges.find_index { |elem| elem.include?(item) }
 
-      @@view_helper.render "ab_tests/some/test_#{index + 1}", args
+      @@view_helper.render "ab_tests/#{self.to_s.underscore.split('_').first}/test_#{index + 1}", args
     end
 
     def self.define_test(args = {}, &block)
