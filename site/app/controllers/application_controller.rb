@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def finish
-    ab_finish('some')
+    ab_finish('button')
     redirect_to root_path
   end
 end
