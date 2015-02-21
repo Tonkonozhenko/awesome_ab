@@ -4,9 +4,20 @@
 </div>
 <script>
     $('#test-button').on('click', function () {
-
-        var date = new Date();
-        var md5 = $.md5(date.toUTCString());
+        var sessionId = $.cookie('session_id');
         debugger;
+        $.ajax({
+            type: "POST",
+            url: "http://" + app.SERVER_HOSTNAME + ":" + app.SERVER_PORT + "/finish?session_id=" + sessionId + "&name=" + namespace,
+            data: {session_id: sessionId, name: namespace},
+            success: function (data) {
+                var status = JSON.parse(data);
+                console.log('Status:' + status.status);
+            },
+            error: function (data) {
+                var status = JSON.parse(data);
+                console.log('Status:' + status.status);
+            }
+        });
     })
 </script>

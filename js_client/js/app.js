@@ -1,4 +1,4 @@
-function App() {
+window.App = function() {
     this.SERVER_HOSTNAME = '192.168.100.84';
     this.SERVER_PORT = 9292;
 };
