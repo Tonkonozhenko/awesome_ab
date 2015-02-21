@@ -1,0 +1,12 @@
+<!--experiment-2-->
+<div class="experiment-2">
+    <a id="test-button" class="btn btn-danger">Second button</a>
+</div>
+<script>
+    $('#test-button').on('click', function () {
+
+        var date = new Date();
+        var md5 = $.md5(date.toUTCString());
+        debugger;
+    })
+</script>
