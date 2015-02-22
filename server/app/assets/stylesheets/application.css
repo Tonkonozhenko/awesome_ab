@@ -10,6 +10,47 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+
  *= require_self
+ *= require_tree .
+ *= require font-awesome
+ *= require _bootstrap
  */
+
+.center{
+    margin: 0 auto;
+}
+
+.main-block{
+    padding-top: 45px;
+    border-bottom: 1px solid #7dd0d7;
+    width:40%;
+}
+
+.date{
+    margin-top: 28px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color:#999;
+}
+
+.title{
+
+    line-height: 1.5;
+}
+
+.row{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 10px;
+}
+
+.case{
+    padding-left: 50px;
+    padding-right: 15px;
+}
+
+.progress{
+    margin-left: 20px;
+}
