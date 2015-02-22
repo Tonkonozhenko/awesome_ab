@@ -1,7 +1,7 @@
 .row
   .col-md-12
     h3 Experiments
-
+  - if collection.any?
     table.table.table-striped
       thead
         tr
@@ -13,7 +13,8 @@
         - collection.each do |ex|
           tr
             td = ex.id
-            /td = link_to ex.name, experiment_path(ex.id)
             td = ex.name
             td = ex.created_at.to_s(:short)
             td = link_to 'Details', experiment_path(ex.id)
+  - else
+    h2.text-center You haven't run any tests. Do this!
