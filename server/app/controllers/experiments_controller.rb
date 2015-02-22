@@ -1,5 +1,13 @@
 class ExperimentsController < InheritedResources::Base
   before_action :authenticate_user!
-  belongs_to :user
   actions :only => [:show, :index]
+
+  def index
+    collection
+  end
+
+  protected
+  def begin_of_association_chain
+    current_user
+  end
 end
