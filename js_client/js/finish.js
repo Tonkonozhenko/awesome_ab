@@ -4,7 +4,7 @@ $('#test-button').on('click', function () {
   $.ajax({
     type: "POST",
     url: "http://" + app.SERVER_HOSTNAME + ":" + app.SERVER_PORT + "/finish?session_id=" + sessionId + "&name=" + 'js_button',
-    data: {session_id: sessionId, name: 'name'},
+    data: {session_id: sessionId, name: 'js_button'},
     success: function (data) {
       var status = JSON.parse(data);
       console.log('Status:' + status.status);
