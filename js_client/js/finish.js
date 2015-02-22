@@ -8,6 +8,7 @@ $('#test-button').on('click', function () {
     success: function (data) {
       var status = JSON.parse(data);
       console.log('Status:' + status.status);
+      $('.alert').removeClass('hidden');
     },
     error: function (data) {
       var status = JSON.parse(data);

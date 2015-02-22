@@ -59,7 +59,7 @@ function AwesomeAB(namespace, container, period) {
         var app = new App();
         var sessionId;
         var self = this;
-        debugger
+
         if ($.cookie('session_id')) {
             sessionId = $.cookie('session_id');
             $.ajax({

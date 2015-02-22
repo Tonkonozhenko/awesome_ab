@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def finish
+    flash[:success] = 'Thanks for participating'
     ab_finish('ruby_button')
     redirect_to root_path
   end

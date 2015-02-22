@@ -1,8 +1,16 @@
 <div class="container">
   <div class="header">
     <h3 class="pull-right"><a href="/js/" class="text-warning">via JavaScript</a></h3>
+
     <h3 class="text-muted">AwesomeAB <span class="text-danger">(Ruby)</span></h3>
   </div>
+
+  <% if flash[:success].present? %>
+    <div class="alert alert-success alert-dismisibble">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <%= flash[:success] %>
+    </div>
+  <% end %>
 
   <div class="jumbotron">
     <h1>Press the button</h1>
