@@ -18,7 +18,9 @@ class ClientApp < Sinatra::Base
 
   get '/find' do
     session_id = params[:session_id]
-    AwesomeAb::Experiment.find_all(session_id).to_json
+    r = AwesomeAb::Experiment.find_all(session_id)
+    res = r.group_by { |e| e[:name] }
+    res.to_json
   end
 
   post '/experiment' do

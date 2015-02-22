@@ -1,7 +1,7 @@
 <div class="container">
   <div class="header">
-    <h3 class="pull-right text-danger">via Ruby</h3>
-    <h3 class="text-muted">AwesomeAB</h3>
+    <h3 class="pull-right"><a href="/js/" class="text-warning">via JavaScript</a></h3>
+    <h3 class="text-muted">AwesomeAB <span class="text-danger">(Ruby)</span></h3>
   </div>
 
   <div class="jumbotron">
@@ -10,7 +10,7 @@
     <p class="lead">Так мы тестируем конверсию пользователей, которые зашли на страницу и увидели данную кнопку</p>
 
     <p>
-      <%= ab_test 'button' %>
+      <%= ab_test 'ruby_button' %>
     </p>
   </div>
 
