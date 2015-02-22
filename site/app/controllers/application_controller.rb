@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
   end
 
   def finish
-    flash[:success] = 'Thanks for participating'
+    # flash[:success] = 'Thanks for participating'
     ab_finish('ruby_button')
-    redirect_to root_path
+    redirect_to 'http://192.168.100.84:3001/users/sign_up'
   end
 end

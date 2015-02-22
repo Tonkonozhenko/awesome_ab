@@ -1,26 +1,45 @@
 <div class="container">
   <div class="header">
-    <h3 class="pull-right"><a href="/js/" class="text-warning">via JavaScript</a></h3>
+    <h3 class="pull-right"><a href="/js/" class="text-warning">версия на JavaScript</a></h3>
 
     <h3 class="text-muted">AwesomeAB <span class="text-danger">(Ruby)</span></h3>
   </div>
 
   <% if flash[:success].present? %>
     <div class="alert alert-success alert-dismisibble">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+      </button>
       <%= flash[:success] %>
     </div>
   <% end %>
 
   <div class="jumbotron">
-    <h1>Press the button</h1>
+    <h1>Awesome A/B</h1>
 
-    <p class="lead">In a such way, we test conversion for users who visited this page and saw this button.</p>
+    <p class="lead">Узнайте как думают ваши клиенты</p>
 
     <p>
       <%= ab_test 'ruby_button' %>
     </p>
   </div>
+
+  <div class="row text-center">
+    <div class="col-md-4">
+      <h4>1. Зарегестрируйтесь</h4>
+      Мгновенная регистрация и полный доступ к функционалу
+    </div>
+    <div class="col-md-4">
+      <h4>2. Интегрируйте</h4>
+      Готовые модули для написания тестов на Ruby, Rails, JavaScript
+    </div>
+    <div class="col-md-4">
+      <h4>3. Получайте результаты</h4>
+      Собирайте статистику и выбирайте лучший вариант
+    </div>
+  </div>
+
+  <br/>
+  <br/>
 
   <footer class="footer">
     <p>&copy; AwesomeAB 2015</p>
