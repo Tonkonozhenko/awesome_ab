@@ -5,7 +5,7 @@ require 'awesome_ab/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "awesome_ab"
-  spec.version       = AwesomeAB::VERSION
+  spec.version       = AwesomeAb::VERSION
   spec.authors       = ["Alex Tonkonozhenko"]
   spec.email         = ["tonkonozhenko@gmail.com"]
 
@@ -22,6 +22,9 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.add_dependency 'redis'
+  spec.add_dependency 'hiredis'
 
   spec.add_development_dependency "bundler", "~> 1.8"
   spec.add_development_dependency "rake", "~> 10.0"
