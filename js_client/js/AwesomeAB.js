@@ -55,8 +55,27 @@ function AwesomeAB(namespace, container, period) {
         $(container).load('templates/' + namespace + '/experiment' + variant + '.html');
     };
 
-    this.start = function () {
-        var variant = this.testingVariant(this.shower);
-        loadExperiment(this.namespace, this.container, variant + 1);
+    this.start = function (container) {
+        var app = new App();
+        var sessionId;
+        if ($.cookie('session_id')) {
+            sessionId = $.cookie('session_id');
+            $.ajax({
+                type: "GET",
+                url: "http://" + app.SERVER_HOSTNAME + ":" + app.SERVER_PORT + '/find?session_id=' + sessionId,
+                dataType: 'json',
+                success: function (data) {
+                    var name = data.name[0].name;
+                    var variant = data.name[0].variant;
+                    loadExperiment(name, container, variant);
+                },
+                error: function (data) {
+                    console.log('Oops, try later');
+                }
+            })
+        } else {
+            var variant = this.testingVariant(this.shower);
+            loadExperiment(this.namespace, this.container, variant + 1);
+        }
     };
 }
