@@ -59,28 +59,4 @@ function AwesomeAB(namespace, container, period) {
         var variant = this.testingVariant(this.shower);
         loadExperiment(this.namespace, this.container, variant + 1);
     };
-
-    //var createCookie = function (cookieValue) {
-    //    debugger;
-    //    var date = new Date();
-    //    date.setDate(date.getDate() + 30);
-    //    document.cookie = cookieValue + "; ending=" + date.toUTCString() + "; path=/";
-    //};
-    //
-    //var getCookieValue = function () {
-    //    var cookie;
-    //    var cookies = getCookies();
-    //    debugger;
-    //for (var i = 0; i < cookies.length; i++) {
-    //    cookie = cookies[i].split("=");
-    //    if (cookie.length > 1)
-    //        return cookie[1];
-    //}
-    //return null;
-    //};
-    //
-    //var getCookies = function () {
-    //    var cookies = document.cookie.split(";");
-    //    return cookies;
-    //};
 }

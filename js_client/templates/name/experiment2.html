@@ -2,14 +2,15 @@
 <div class="experiment-2">
     <a id="test-button" class="btn btn-danger">Second button</a>
 </div>
+
 <script>
     $('#test-button').on('click', function () {
         var sessionId = $.cookie('session_id');
         debugger;
         $.ajax({
             type: "POST",
-            url: "http://" + app.SERVER_HOSTNAME + ":" + app.SERVER_PORT + "/finish?session_id=" + sessionId + "&name=" + namespace,
-            data: {session_id: sessionId, name: namespace},
+            url: "http://" + app.SERVER_HOSTNAME + ":" + app.SERVER_PORT + "/finish?session_id=" + sessionId + "&name=" + 'name',
+            data: {session_id: sessionId, name: 'name'},
             success: function (data) {
                 var status = JSON.parse(data);
                 console.log('Status:' + status.status);
