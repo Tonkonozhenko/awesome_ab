@@ -3,7 +3,7 @@ class CreateExperiment < ActiveRecord::Migration
     create_table :experiments do |t|
       t.integer :user_id
       t.string :name, null: false, default: ""
-      t.timestamps null: false
+      t.timestamps
     end
   end
 end
