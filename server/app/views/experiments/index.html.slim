@@ -1,2 +1,12 @@
-- current_user.experiments.each do |ex|
-    = render 'test', ex: ex
+table.table.table-striped
+  thead
+    tr
+      th #
+      th Test
+      th User
+  tbody
+    - collection.each do |ex|
+      tr
+        th = ex.id
+        th = link_to ex.name, experiment_path(ex.id)
+        th = ex.user.email
