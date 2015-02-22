@@ -58,6 +58,8 @@ function AwesomeAB(namespace, container, period) {
     this.start = function (container) {
         var app = new App();
         var sessionId;
+        var self = this;
+        debugger
         if ($.cookie('session_id')) {
             sessionId = $.cookie('session_id');
             $.ajax({
@@ -65,9 +67,14 @@ function AwesomeAB(namespace, container, period) {
                 url: "http://" + app.SERVER_HOSTNAME + ":" + app.SERVER_PORT + '/find?session_id=' + sessionId,
                 dataType: 'json',
                 success: function (data) {
-                    var name = data.name[0].name;
-                    var variant = data.name[0].variant;
-                    loadExperiment(name, container, variant);
+                    var variant;
+                    if (data[self.namespace]) {
+                        variant = data[self.namespace][0].variant;
+                        loadExperiment(self.namespace, container, variant);
+                    } else {
+                        variant = self.testingVariant(self.shower);
+                        loadExperiment(self.namespace, self.container, variant + 1);
+                    }
                 },
                 error: function (data) {
                     console.log('Oops, try later');

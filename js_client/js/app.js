@@ -4,6 +4,6 @@ function App() {
 };
 
 $(document).ready(function () {
-    var awesome_ab = new AwesomeAB('name', '.testing-content', [1, 1]);
+    var awesome_ab = new AwesomeAB('js_button', '.testing-content', [1, 1]);
     awesome_ab.start('.testing-content');
 });
