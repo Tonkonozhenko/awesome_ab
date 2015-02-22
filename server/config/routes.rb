@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :experiments
 
+  post 'upload_data' => 'api#upload_data', defaults: {format: :json}
+
   root 'experiments#index'
   # See how all your routes lay out with "rake routes".
 

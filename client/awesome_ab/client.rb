@@ -29,15 +29,20 @@ module AwesomeAb
 
     delegate :redis, to: :class
 
-    def self.find_all(session_id)
+    def self.find_all(session_id = nil, match = "experiments:*:*:#{session_id}", with_session = false)
       index = 0
       results = []
       begin
-        res = redis.scan index, match: "experiments:*:*:#{session_id}"
-        res[1].each { |key| results << redis.hgetall(key).merge(name: key.split(':')[1]) }
+        res = redis.scan index, match: match
+        res[1].each do |key|
+          key_split = key.split(':')
+          obj = redis.hgetall(key).merge(name: key_split[1])
+          obj.merge!(session_id: key_split[3]) if with_session
+          results << obj
+        end
         index = res[0]
       end while index != '0'
-      results.group_by { |e| e[:name] }
+      results
     end
 
 

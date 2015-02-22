@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150221205456) do
   end
 
   create_table "experiment_results", force: :cascade do |t|
-    t.integer  "session_id"
+    t.string   "session_id"
     t.integer  "experiment_case_id"
     t.boolean  "finished",           default: false, null: false
     t.datetime "created_at",                         null: false
