@@ -1,12 +1,20 @@
-.main-block.center
-  .row
-    p.date.pull-right = resource.created_at
+.row
+  .col-md-12
+    p.date.pull-right = "#{resource.created_at.to_s(:short)} - #{Time.now.to_s(:short)}"
     h3.title = resource.name
-  - resource.experiment_cases.each do |exp_case|
-    .row.case
-      p.pull-left = exp_case.number
+    h4.cases Cases conversion
+
+- conn = ActiveRecord::Base.connection
+- resource.experiment_cases.each do |exp_case|
+  .row
+    .col-md-1.text-left = exp_case.number
+    .col-md-9
       .progress
-        .progress-bar aria-valuenow=("60") aria-valuemin=("0") aria-valuemax=("100") style=("width: 60%;") 60%
-
-
-
+        - sql = "SELECT 1.0 * (SELECT count(*) FROM experiment_cases INNER JOIN experiment_results ON experiment_cases.id = experiment_results.experiment_case_id WHERE experiment_cases.id = #{conn.quote(exp_case.id)} AND experiment_results.finished = TRUE) / (SELECT count(*) FROM experiment_cases INNER JOIN experiment_results ON experiment_cases.id = experiment_results.experiment_case_id WHERE experiment_cases.id = #{conn.quote(exp_case.id)}) AS result;"
+        - st = conn.execute(sql)
+        - percent = number_with_precision st.to_a[0]['result'].to_f * 100, precision: 2
+        .progress-bar aria-valuenow=(st.to_a[0]['result'].to_f*100) aria-valuemin=("0") aria-valuemax=("100") style=("width: #{percent}%;") = "#{percent}%"
+    .col-md-2.text-right = link_to 'Details', "#experiment-details-#{exp_case.id}", data: {toggle: 'collapse'}
+    .col-md-12.collapse(id="experiment-details-#{exp_case.id}")
+      h5 25 latest results
+      pre : code.json = JSON.pretty_generate exp_case.experiment_results.limit(25).pluck(:id, :session_id, :finished).map { |a| {id: a[0], session_id: a[1], finished: a[2]} }

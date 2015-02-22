@@ -2,9 +2,13 @@ doctype html
 html
   head
     title
-      | Server
+      | Awesome A/B
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css"
+    script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"
+    javascript:
+      hljs.initHighlightingOnLoad();
     = csrf_meta_tags
   body
     .navbar.navbar-default
@@ -15,7 +19,7 @@ html
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand href="#"  Awesome A/B
+          a.navbar-brand href="/"  Awesome A/B
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           ul.nav.navbar-nav.navbar-right
             =render 'devise/shared/links'
