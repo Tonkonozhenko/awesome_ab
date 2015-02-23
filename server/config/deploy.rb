@@ -24,11 +24,11 @@ set :deploy_to, '/var/www/awesome_ab/server'
 
 # Default value for :linked_files is []
 # set :linked_files, fetch(:linked_files, []).push('config/database.yml')
-set :linked_files, %w[config/database.yml]
+set :linked_files, %w[server/config/database.yml]
 
 # Default value for linked_dirs is []
 # set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{server/bin server/log server/tmp/pids server/tmp/cache server/tmp/sockets server/vendor/bundle server/public/system}
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
