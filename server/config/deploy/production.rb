@@ -16,7 +16,7 @@
 # used to set extended properties on the server.
 
 # server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
-server '188.166.47.233', user: 'root', roles: %w[web app db]
+server '178.62.234.45', user: 'root', roles: %w[web app db]
 
 
 # Custom SSH Options
